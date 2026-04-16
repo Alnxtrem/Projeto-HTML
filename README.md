@@ -1,26 +1,53 @@
+Este projeto é um site de portfólio pessoal desenvolvido para a disciplina de Fundamentos da Programação Web.
 
-Projeto de site de portfólio pessoal com as seções:
+O objetivo é apresentar informações profissionais, formação e projetos de forma moderna, utilizando apenas tecnologias base da web.
 
-- Sobre mim
-- Formação
-- Portfólio
-- Contato
+Tecnologias Utilizadas
+HTML5
+CSS3 (sem frameworks)
+JavaScript puro
+🎯 Funcionalidades
+Navegação entre seções (Single Page)
+Layout moderno (dark mode)
+Seção de apresentação (hero)
+Terminal simulado (estilo dev)
+Cards de projetos
+Formulário de contato com:
+Validação de campos
+Validação de e-mail
+Simulação de envio
+ Estrutura do Projeto
+index.html
+style.css
+script.js
+Acesse o Projeto
 
-- Navegação por menu visível no topo da página.
-- Layout responsivo sem uso de frameworks.
-- Formulário com validação em JavaScript:
-  - Nome com no mínimo 3 caracteres.
-  - E-mail em formato válido.
-  - Mensagem com no mínimo 10 caracteres.
-- Simulação de envio com feedback de sucesso.
+Site publicado:
+https://alnxtrem.github.io/Projeto-HTML/
 
-1. Baixe/clone este repositório.
-2. Abra o arquivo `index.html` no navegador.
+Repositório:
+https://github.com/Alnxtrem/Projeto-HTML
 
-1. Envie o projeto para um repositório no GitHub.
-2. Acesse **Settings > Pages**.
-3. Em **Build and deployment**, escolha:
-   - **Source:** Deploy from a branch
-   - **Branch:** `main` (ou branch padrão) e pasta `/ (root)`
-4. Salve e aguarde a publicação.
-5. O site ficará disponível em:
+Como Executar Localmente
+Clone o repositório:
+git clone https://github.com/Alnxtrem/Projeto-HTML.git
+Acesse a pasta:
+cd Projeto-HTML
+Abra o arquivo index.html no navegador
+ou utilize a extensão Live Server no VS Code.
+ Contato
+
+Caso queira entrar em contato:
+
+Email: seuemail@email.com
+LinkedIn: (colocar aqui se quiser)
+ Observações
+Projeto desenvolvido sem uso de frameworks, conforme exigência da atividade.
+Código organizado e comentado.
+Compatível com dispositivos desktop.
+
+Autor
+ 
+Alan
+Estudante de Ciência de Dados
+Foco em ETL, automação e análise de dados
