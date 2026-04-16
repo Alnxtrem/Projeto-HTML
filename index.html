@@ -1,0 +1,153 @@
+ (cd "$(git rev-parse --show-toplevel)" && git apply --3way <<'EOF' 
+diff --git a/index.html b/index.html
+new file mode 100644
+index 0000000000000000000000000000000000000000..7d29a5c5ec2a7960beb13f3ce34fb2464a30892f
+--- /dev/null
++++ b/index.html
+@@ -0,0 +1,143 @@
++<!DOCTYPE html>
++<html lang="pt-BR">
++  <head>
++    <meta charset="UTF-8" />
++    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
++    <meta
++      name="description"
++      content="Portfólio pessoal com informações sobre formação, projetos e contato."
++    />
++    <title>Portfólio Pessoal | Seu Nome</title>
++    <link rel="stylesheet" href="styles.css" />
++  </head>
++  <body>
++    <!-- Cabeçalho fixo com navegação visível em toda a página -->
++    <header class="site-header">
++      <div class="container header-content">
++        <h1 class="brand">Seu Nome</h1>
++        <nav aria-label="Navegação principal">
++          <ul class="menu">
++            <li><a href="#sobre">Sobre mim</a></li>
++            <li><a href="#formacao">Formação</a></li>
++            <li><a href="#portfolio">Portfólio</a></li>
++            <li><a href="#contato">Contato</a></li>
++          </ul>
++        </nav>
++      </div>
++    </header>
++
++    <main>
++      <!-- Seção: Sobre mim -->
++      <section id="sobre" class="section">
++        <div class="container">
++          <h2>Sobre mim</h2>
++          <p>
++            Olá! Sou estudante e desenvolvedor em formação, apaixonado por
++            tecnologia, interfaces web e aprendizado contínuo. Gosto de criar
++            soluções simples, funcionais e com boa experiência para o usuário.
++          </p>
++          <p>
++            Nos meus estudos, venho praticando HTML, CSS e JavaScript para
++            construir páginas responsivas e interativas sem uso de frameworks.
++          </p>
++        </div>
++      </section>
++
++      <!-- Seção: Formação -->
++      <section id="formacao" class="section section-alt">
++        <div class="container">
++          <h2>Formação</h2>
++          <ul class="timeline">
++            <li>
++              <h3>Análise e Desenvolvimento de Sistemas</h3>
++              <p>UNINTER — Em andamento</p>
++            </li>
++            <li>
++              <h3>Curso de HTML, CSS e JavaScript</h3>
++              <p>Plataforma online — Concluído</p>
++            </li>
++            <li>
++              <h3>Inglês técnico para TI</h3>
++              <p>Nível intermediário</p>
++            </li>
++          </ul>
++        </div>
++      </section>
++
++      <!-- Seção: Portfólio -->
++      <section id="portfolio" class="section">
++        <div class="container">
++          <h2>Portfólio</h2>
++          <div class="cards">
++            <article class="card">
++              <h3>Projeto 1: Página institucional</h3>
++              <p>
++                Site estático com layout responsivo para apresentação de uma
++                empresa fictícia.
++              </p>
++              <a href="#" aria-disabled="true">Link em breve</a>
++            </article>
++            <article class="card">
++              <h3>Projeto 2: Lista de tarefas</h3>
++              <p>
++                Aplicação em JavaScript puro para cadastro e remoção de tarefas
++                no navegador.
++              </p>
++              <a href="#" aria-disabled="true">Link em breve</a>
++            </article>
++            <article class="card">
++              <h3>Projeto 3: Landing page</h3>
++              <p>
++                Página promocional com foco em semântica HTML e boas práticas de
++                acessibilidade.
++              </p>
++              <a href="#" aria-disabled="true">Link em breve</a>
++            </article>
++          </div>
++        </div>
++      </section>
++
++      <!-- Seção: Contato -->
++      <section id="contato" class="section section-alt">
++        <div class="container">
++          <h2>Contato</h2>
++          <form id="contact-form" novalidate>
++            <div class="form-group">
++              <label for="nome">Nome</label>
++              <input type="text" id="nome" name="nome" required />
++              <small class="error" id="erro-nome"></small>
++            </div>
++
++            <div class="form-group">
++              <label for="email">E-mail</label>
++              <input type="email" id="email" name="email" required />
++              <small class="error" id="erro-email"></small>
++            </div>
++
++            <div class="form-group">
++              <label for="mensagem">Mensagem</label>
++              <textarea
++                id="mensagem"
++                name="mensagem"
++                rows="5"
++                required
++              ></textarea>
++              <small class="error" id="erro-mensagem"></small>
++            </div>
++
++            <button type="submit">Enviar mensagem</button>
++            <p id="form-feedback" class="feedback" role="status" aria-live="polite"></p>
++          </form>
++        </div>
++      </section>
++    </main>
++
++    <footer class="site-footer">
++      <div class="container">
++        <p>© <span id="ano-atual"></span> Seu Nome. Todos os direitos reservados.</p>
++      </div>
++    </footer>
++
++    <script src="script.js"></script>
++  </body>
++</html>
+ 
+EOF
+)
