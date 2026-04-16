@@ -1,153 +1,366 @@
- (cd "$(git rev-parse --show-toplevel)" && git apply --3way <<'EOF' 
-diff --git a/index.html b/index.html
-new file mode 100644
-index 0000000000000000000000000000000000000000..7d29a5c5ec2a7960beb13f3ce34fb2464a30892f
---- /dev/null
-+++ b/index.html
-@@ -0,0 +1,143 @@
-+<!DOCTYPE html>
-+<html lang="pt-BR">
-+  <head>
-+    <meta charset="UTF-8" />
-+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-+    <meta
-+      name="description"
-+      content="Portfólio pessoal com informações sobre formação, projetos e contato."
-+    />
-+    <title>Portfólio Pessoal | Seu Nome</title>
-+    <link rel="stylesheet" href="styles.css" />
-+  </head>
-+  <body>
-+    <!-- Cabeçalho fixo com navegação visível em toda a página -->
-+    <header class="site-header">
-+      <div class="container header-content">
-+        <h1 class="brand">Seu Nome</h1>
-+        <nav aria-label="Navegação principal">
-+          <ul class="menu">
-+            <li><a href="#sobre">Sobre mim</a></li>
-+            <li><a href="#formacao">Formação</a></li>
-+            <li><a href="#portfolio">Portfólio</a></li>
-+            <li><a href="#contato">Contato</a></li>
-+          </ul>
-+        </nav>
-+      </div>
-+    </header>
-+
-+    <main>
-+      <!-- Seção: Sobre mim -->
-+      <section id="sobre" class="section">
-+        <div class="container">
-+          <h2>Sobre mim</h2>
-+          <p>
-+            Olá! Sou estudante e desenvolvedor em formação, apaixonado por
-+            tecnologia, interfaces web e aprendizado contínuo. Gosto de criar
-+            soluções simples, funcionais e com boa experiência para o usuário.
-+          </p>
-+          <p>
-+            Nos meus estudos, venho praticando HTML, CSS e JavaScript para
-+            construir páginas responsivas e interativas sem uso de frameworks.
-+          </p>
-+        </div>
-+      </section>
-+
-+      <!-- Seção: Formação -->
-+      <section id="formacao" class="section section-alt">
-+        <div class="container">
-+          <h2>Formação</h2>
-+          <ul class="timeline">
-+            <li>
-+              <h3>Análise e Desenvolvimento de Sistemas</h3>
-+              <p>UNINTER — Em andamento</p>
-+            </li>
-+            <li>
-+              <h3>Curso de HTML, CSS e JavaScript</h3>
-+              <p>Plataforma online — Concluído</p>
-+            </li>
-+            <li>
-+              <h3>Inglês técnico para TI</h3>
-+              <p>Nível intermediário</p>
-+            </li>
-+          </ul>
-+        </div>
-+      </section>
-+
-+      <!-- Seção: Portfólio -->
-+      <section id="portfolio" class="section">
-+        <div class="container">
-+          <h2>Portfólio</h2>
-+          <div class="cards">
-+            <article class="card">
-+              <h3>Projeto 1: Página institucional</h3>
-+              <p>
-+                Site estático com layout responsivo para apresentação de uma
-+                empresa fictícia.
-+              </p>
-+              <a href="#" aria-disabled="true">Link em breve</a>
-+            </article>
-+            <article class="card">
-+              <h3>Projeto 2: Lista de tarefas</h3>
-+              <p>
-+                Aplicação em JavaScript puro para cadastro e remoção de tarefas
-+                no navegador.
-+              </p>
-+              <a href="#" aria-disabled="true">Link em breve</a>
-+            </article>
-+            <article class="card">
-+              <h3>Projeto 3: Landing page</h3>
-+              <p>
-+                Página promocional com foco em semântica HTML e boas práticas de
-+                acessibilidade.
-+              </p>
-+              <a href="#" aria-disabled="true">Link em breve</a>
-+            </article>
-+          </div>
-+        </div>
-+      </section>
-+
-+      <!-- Seção: Contato -->
-+      <section id="contato" class="section section-alt">
-+        <div class="container">
-+          <h2>Contato</h2>
-+          <form id="contact-form" novalidate>
-+            <div class="form-group">
-+              <label for="nome">Nome</label>
-+              <input type="text" id="nome" name="nome" required />
-+              <small class="error" id="erro-nome"></small>
-+            </div>
-+
-+            <div class="form-group">
-+              <label for="email">E-mail</label>
-+              <input type="email" id="email" name="email" required />
-+              <small class="error" id="erro-email"></small>
-+            </div>
-+
-+            <div class="form-group">
-+              <label for="mensagem">Mensagem</label>
-+              <textarea
-+                id="mensagem"
-+                name="mensagem"
-+                rows="5"
-+                required
-+              ></textarea>
-+              <small class="error" id="erro-mensagem"></small>
-+            </div>
-+
-+            <button type="submit">Enviar mensagem</button>
-+            <p id="form-feedback" class="feedback" role="status" aria-live="polite"></p>
-+          </form>
-+        </div>
-+      </section>
-+    </main>
-+
-+    <footer class="site-footer">
-+      <div class="container">
-+        <p>© <span id="ano-atual"></span> Seu Nome. Todos os direitos reservados.</p>
-+      </div>
-+    </footer>
-+
-+    <script src="script.js"></script>
-+  </body>
-+</html>
- 
-EOF
-)
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="description"
+    content="Portfólio de Alan Balduino da Rosa, com foco em dados, ETL, automação, integração de processos e IA aplicada à produtividade."
+  >
+  <title>Alan Balduino da Rosa | Dados, ETL e Automação</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="site-nav">
+      <a class="brand" href="#inicio">Alan Balduino da Rosa</a>
+
+      <ul class="nav-links">
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#experiencia">Experiência</a></li>
+        <li><a href="#projetos">Projetos</a></li>
+        <li><a href="#stack">Stack</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="inicio" class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Dados | ETL | Automação | IA aplicada à produtividade</p>
+        <h1>Transformo processos internos em fluxos de dados mais rápidos, confiáveis e escaláveis.</h1>
+        <p class="lead">
+          Sou Alan Balduino da Rosa, profissional em formação na área de dados e tecnologia,
+          com experiência prática em ETL, automação de processos, integração de dados e
+          desenvolvimento de soluções internas com SQL, SSIS, C#, Angular, n8n e IA.
+        </p>
+
+        <div class="cta-row">
+          <a href="#projetos" class="btn btn-primary">Ver projetos</a>
+          <a href="#contato" class="btn btn-secondary">Entrar em contato</a>
+        </div>
+
+        <ul class="contact-strip">
+          <li>Porto Alegre - RS</li>
+          <li><a href="mailto:alanbalduinorosa@gmail.com">alanbalduinorosa@gmail.com</a></li>
+          <li><a href="tel:+5551996033965">(51) 99603-3965</a></li>
+        </ul>
+      </div>
+
+      <aside class="hero-panel" aria-label="Resumo rápido do perfil profissional">
+        <div class="panel-card panel-card-main">
+          <p class="panel-label">Atuação atual</p>
+          <h2>PROCERGS</h2>
+          <p>
+            Estagiário com atuação em desenvolvimento, dados e integração de processos
+            desde fevereiro de 2026, trabalhando com SSIS, C# e Angular.
+          </p>
+        </div>
+
+        <div class="panel-grid">
+          <article class="panel-card">
+            <p class="panel-label">Foco</p>
+            <strong>ETL e automação</strong>
+            <span>Extração, transformação, carga e estruturação de fluxos internos.</span>
+          </article>
+
+          <article class="panel-card">
+            <p class="panel-label">Ferramentas</p>
+            <strong>SQL, SSIS, n8n</strong>
+            <span>Leitura de arquivos, integração entre sistemas e apoio a processos analíticos.</span>
+          </article>
+
+          <article class="panel-card">
+            <p class="panel-label">Desenvolvimento</p>
+            <strong>C# e Angular</strong>
+            <span>Participação em manutenção e construção de soluções internas.</span>
+          </article>
+
+          <article class="panel-card">
+            <p class="panel-label">Abordagem</p>
+            <strong>IA com senso crítico</strong>
+            <span>Apoio técnico para acelerar entregas sem abrir mão da análise.</span>
+          </article>
+        </div>
+      </aside>
+    </section>
+
+    <section id="sobre" class="section-block">
+      <div class="section-heading">
+        <p class="eyebrow">Resumo profissional</p>
+        <h2>Perfil analítico, prático e orientado à melhoria de processos</h2>
+      </div>
+
+      <div class="about-grid">
+        <div class="prose-card">
+          <p>
+            Tenho experiência prática com ETL, automação de fluxos, processamento de
+            arquivos, manipulação de dados com SQL e integração entre sistemas, sempre
+            buscando formas de tornar processos mais eficientes, organizados e confiáveis.
+          </p>
+          <p>
+            No dia a dia, utilizo Inteligência Artificial como apoio técnico para acelerar
+            a criação e revisão de consultas SQL, estruturar automações, revisar fluxos e
+            organizar melhor a lógica de implementação.
+          </p>
+          <p>
+            Meu foco não é depender da IA, mas usá-la de forma estratégica para entregar
+            melhor e mais rápido, mantendo leitura crítica sobre tudo o que está sendo construído.
+          </p>
+        </div>
+
+        <div class="highlight-card">
+          <h3>Onde gero valor</h3>
+          <ul class="bullet-list">
+            <li>ETL, integração de dados e automação de etapas operacionais.</li>
+            <li>Organização e tratamento de informações para uso interno.</li>
+            <li>Consultas SQL e apoio a fluxos analíticos.</li>
+            <li>Estruturação de soluções internas com dados e desenvolvimento.</li>
+            <li>Produtividade técnica com uso inteligente de IA.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="experiencia" class="section-block">
+      <div class="section-heading">
+        <p class="eyebrow">Experiência profissional</p>
+        <h2>Vivência prática em dados, ETL, automação e desenvolvimento interno</h2>
+      </div>
+
+      <div class="timeline">
+        <article class="timeline-item current">
+          <div class="timeline-meta">
+            <p class="timeline-period">02/2026 - Atual</p>
+            <h3>PROCERGS</h3>
+            <p class="timeline-role">Estagiário | Atuação em Desenvolvimento e Dados</p>
+          </div>
+
+          <ul class="bullet-list">
+            <li>Participação em projetos que envolvem desenvolvimento, dados e integração de processos.</li>
+            <li>Construção e manutenção de fluxos de extração, transformação e carga de dados com SSIS.</li>
+            <li>Apoio a soluções internas com C# e Angular.</li>
+            <li>Atuação em processos de leitura, tratamento e integração de arquivos para uso operacional.</li>
+            <li>Experiência prática com automação de etapas e organização de informações em fluxos internos.</li>
+          </ul>
+        </article>
+
+        <article class="timeline-item">
+          <div class="timeline-meta">
+            <p class="timeline-period">08/2023 - 12/2024</p>
+            <h3>Concrédito</h3>
+            <p class="timeline-role">Atuação em Dados, ETL e Automação</p>
+          </div>
+
+          <ul class="bullet-list">
+            <li>Atuação com foco em dados, ETL, automação e apoio a processos analíticos.</li>
+            <li>Consultas SQL, manipulação de informações e suporte a fluxos de transformação de dados.</li>
+            <li>Desenvolvimento de automações com n8n para leitura, tratamento e movimentação de dados.</li>
+            <li>Contato constante com lógica de automação, organização de processos e simplificação de rotinas operacionais.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="projetos" class="section-block">
+      <div class="section-heading">
+        <p class="eyebrow">Projetos e experiências práticas</p>
+        <h2>Soluções que conectam dados, automação e produtividade técnica</h2>
+      </div>
+
+      <div class="projects-grid">
+        <article class="project-card featured">
+          <span class="project-tag">Experiência prática</span>
+          <h3>Automação de leitura de arquivos via SharePoint</h3>
+          <p>
+            Participação em um fluxo com SSIS responsável por buscar arquivos de clientes
+            via SharePoint, realizar leitura dos dados e extrair as informações necessárias
+            para o processo.
+          </p>
+          <p class="project-stack">SSIS | SharePoint | ETL | Integração de arquivos</p>
+        </article>
+
+        <article class="project-card">
+          <span class="project-tag">Automação</span>
+          <h3>Automações com n8n</h3>
+          <p>
+            Criação de fluxos para leitura, tratamento e movimentação de dados entre etapas
+            de processo, reduzindo atividades manuais e melhorando a organização operacional.
+          </p>
+          <p class="project-stack">n8n | Automação de processos | Integração</p>
+        </article>
+
+        <article class="project-card">
+          <span class="project-tag">Produtividade técnica</span>
+          <h3>IA aplicada ao dia a dia</h3>
+          <p>
+            Uso de IA como apoio técnico para revisar consultas SQL, validar ideias de
+            implementação, estruturar automações e acelerar tarefas técnicas e analíticas.
+          </p>
+          <p class="project-stack">IA | SQL | Automação | Revisão de lógica</p>
+        </article>
+
+        <article class="project-card">
+          <span class="project-tag">Projeto</span>
+          <h3>Notas PJ's</h3>
+          <p>
+            Projeto voltado à automação com IA para leitura de notas fiscais, com foco em
+            extração de informações e ganho operacional.
+          </p>
+          <p class="project-stack">IA | Leitura de documentos | Extração de dados</p>
+        </article>
+
+        <article class="project-card">
+          <span class="project-tag">Projeto</span>
+          <h3>IA ETL</h3>
+          <p>
+            Agente inteligente para monitoramento de pipelines, pensado para apoiar a
+            observabilidade e a tomada de ação em fluxos de dados.
+          </p>
+          <p class="project-stack">ETL | Monitoramento | IA aplicada a dados</p>
+        </article>
+
+        <article class="project-card">
+          <span class="project-tag">Projeto</span>
+          <h3>Automações com Supabase</h3>
+          <p>
+            Estruturação de triggers e integrações de processos com foco em automação,
+            persistência de dados e orquestração de eventos.
+          </p>
+          <p class="project-stack">Supabase | Triggers | Integração de processos</p>
+        </article>
+
+        <article class="project-card">
+          <span class="project-tag">Desenvolvimento</span>
+          <h3>Soluções internas com C# e Angular</h3>
+          <p>
+            Participação em atividades relacionadas ao desenvolvimento e manutenção de
+            aplicações internas, ampliando a base tanto em dados quanto em software.
+          </p>
+          <p class="project-stack">C# | Angular | Soluções internas</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="stack" class="section-block">
+      <div class="section-heading">
+        <p class="eyebrow">Stack técnica</p>
+        <h2>Ferramentas e competências que sustentam meu trabalho hoje</h2>
+      </div>
+
+      <div class="stack-layout">
+        <article class="stack-card">
+          <h3>Dados e ETL</h3>
+          <ul class="skill-pills">
+            <li>SQL Avançado</li>
+            <li>ETL</li>
+            <li>SSIS</li>
+            <li>dbt</li>
+            <li>Modelagem dimensional</li>
+            <li>Performance</li>
+            <li>Python</li>
+            <li>Grafana</li>
+          </ul>
+        </article>
+
+        <article class="stack-card">
+          <h3>Automação e integração</h3>
+          <ul class="skill-pills">
+            <li>n8n</li>
+            <li>SharePoint</li>
+            <li>Integração de dados</li>
+            <li>Automação de processos</li>
+            <li>Supabase</li>
+            <li>Excel Avançado</li>
+          </ul>
+        </article>
+
+        <article class="stack-card">
+          <h3>Desenvolvimento e IA</h3>
+          <ul class="skill-pills">
+            <li>C#</li>
+            <li>Angular</li>
+            <li>Razor</li>
+            <li>IA aplicada a dados</li>
+            <li>IA aplicada à produtividade</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="formacao" class="section-block">
+      <div class="section-heading">
+        <p class="eyebrow">Formação e credenciais</p>
+        <h2>Base acadêmica em andamento, formação prática e aprendizado contínuo</h2>
+      </div>
+
+      <div class="info-grid">
+        <article class="info-card">
+          <h3>Formação</h3>
+          <p>Bacharelado em Ciência de Dados - UNINTER (em andamento)</p>
+          <p>Estudos em Programação - Instituto Federal (2 anos)</p>
+        </article>
+
+        <article class="info-card">
+          <h3>Certificação</h3>
+          <p>The Advanced SQL Server Masterclass for Data Analysis - Udemy</p>
+        </article>
+
+        <article class="info-card">
+          <h3>Idiomas</h3>
+          <p>Português (Nativo)</p>
+          <p>Inglês (Intermediário)</p>
+        </article>
+
+        <article class="info-card">
+          <h3>Direção profissional</h3>
+          <p>
+            Minha atuação se concentra em dados, automação, produtividade técnica e
+            desenvolvimento de soluções internas com foco em impacto operacional.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="contato" class="section-block contact-section">
+      <div class="section-heading">
+        <p class="eyebrow">Contato</p>
+        <h2>Vamos conversar sobre dados, automação ou soluções internas</h2>
+      </div>
+
+      <div class="contact-layout">
+        <article class="contact-card">
+          <h3>Informações diretas</h3>
+          <ul class="contact-list">
+            <li><span>Email</span><a href="mailto:alanbalduinorosa@gmail.com">alanbalduinorosa@gmail.com</a></li>
+            <li><span>Telefone</span><a href="tel:+5551996033965">(51) 99603-3965</a></li>
+            <li><span>Localização</span><strong>Porto Alegre - RS</strong></li>
+          </ul>
+        </article>
+
+        <form id="form" class="contact-form" novalidate>
+          <label for="nome">Nome</label>
+          <input type="text" id="nome" name="nome" placeholder="Seu nome" autocomplete="name" required minlength="3">
+
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com" autocomplete="email" required>
+
+          <label for="mensagem">Mensagem</label>
+          <textarea id="mensagem" name="mensagem" placeholder="Conte um pouco sobre o projeto ou oportunidade." required minlength="10"></textarea>
+
+          <button type="submit" id="submit-button">Enviar mensagem</button>
+          <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Alan Balduino da Rosa - Portfólio profissional</p>
+    <p>&copy; <span id="current-year"></span> Todos os direitos reservados.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
