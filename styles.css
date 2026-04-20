@@ -146,7 +146,11 @@ main {
 
 .hero h1 {
   margin: 0;
+<<<<<<< HEAD
   max-width: 12ch;
+=======
+  max-width: 11ch;
+>>>>>>> ba1688c69e20b85b8c48a8421651996a93cbbd4f
   font-size: clamp(3rem, 7.6vw, 6.2rem);
   line-height: 0.95;
   letter-spacing: -0.04em;
@@ -296,6 +300,7 @@ main {
   letter-spacing: -0.03em;
 }
 
+<<<<<<< HEAD
 .section-mini-heading {
   max-width: 760px;
   margin-bottom: 22px;
@@ -314,6 +319,8 @@ main {
   background: linear-gradient(90deg, rgba(132, 214, 201, 0.46), rgba(112, 164, 222, 0.08) 62%, transparent);
 }
 
+=======
+>>>>>>> ba1688c69e20b85b8c48a8421651996a93cbbd4f
 .about-grid,
 .contact-layout {
   display: grid;
@@ -513,10 +520,13 @@ main {
   text-decoration: none;
 }
 
+<<<<<<< HEAD
 .contact-note {
   margin: 0 0 18px;
 }
 
+=======
+>>>>>>> ba1688c69e20b85b8c48a8421651996a93cbbd4f
 .contact-form {
   display: grid;
   gap: 12px;

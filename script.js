@@ -13,6 +13,7 @@ if (form && statusEl && submitButton) {
     email: document.getElementById("email"),
     mensagem: document.getElementById("mensagem"),
   };
+<<<<<<< HEAD
 
   const fieldList = Object.values(fields).filter(Boolean);
 
@@ -88,4 +89,62 @@ if (form && statusEl && submitButton) {
       }, 900);
     });
   }
+=======
+
+  function resetFieldState() {
+    Object.values(fields).forEach((field) => {
+      field.classList.remove("input-error");
+    });
+
+    statusEl.textContent = "";
+    statusEl.classList.remove("is-error", "is-success");
+  }
+
+  function setError(field, message) {
+    field.classList.add("input-error");
+    statusEl.textContent = message;
+    statusEl.classList.add("is-error");
+  }
+
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
+    resetFieldState();
+
+    const nome = fields.nome.value.trim();
+    const email = fields.email.value.trim();
+    const mensagem = fields.mensagem.value.trim();
+    const emailValido = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i.test(email);
+
+    if (nome.length < 3) {
+      setError(fields.nome, "Informe um nome com pelo menos 3 caracteres.");
+      fields.nome.focus();
+      return;
+    }
+
+    if (!emailValido) {
+      setError(fields.email, "Digite um email válido para continuarmos.");
+      fields.email.focus();
+      return;
+    }
+
+    if (mensagem.length < 10) {
+      setError(fields.mensagem, "A mensagem precisa ter pelo menos 10 caracteres.");
+      fields.mensagem.focus();
+      return;
+    }
+
+    submitButton.disabled = true;
+    submitButton.textContent = "Enviando...";
+    statusEl.textContent = "Mensagem validada. Simulando envio...";
+
+    window.setTimeout(function () {
+      form.reset();
+      submitButton.disabled = false;
+      submitButton.textContent = "Enviar mensagem";
+      statusEl.textContent = "Mensagem enviada com sucesso. Obrigado pelo contato!";
+      statusEl.classList.remove("is-error");
+      statusEl.classList.add("is-success");
+    }, 900);
+  });
+>>>>>>> ba1688c69e20b85b8c48a8421651996a93cbbd4f
 }
