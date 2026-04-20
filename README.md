@@ -1,26 +1,34 @@
+# Portfólio Pessoal - Alan Balduino da Rosa
 
-Projeto de site de portfólio pessoal com as seções:
+Projeto de portfólio pessoal desenvolvido com HTML, CSS e JavaScript puro para atender às exigências da atividade prática de Web.
 
-- Sobre mim
+## Seções obrigatórias
+
+- Sobre Mim
 - Formação
 - Portfólio
 - Contato
 
-- Navegação por menu visível no topo da página.
-- Layout responsivo sem uso de frameworks.
+## Recursos implementados
+
+- Menu fixo no topo com navegação para as quatro seções exigidas.
+- Layout responsivo, sem uso de frameworks.
+- Conteúdo profissional organizado para facilitar os prints da entrega.
 - Formulário com validação em JavaScript:
   - Nome com no mínimo 3 caracteres.
   - E-mail em formato válido.
   - Mensagem com no mínimo 10 caracteres.
-- Simulação de envio com feedback de sucesso.
+- Simulação de envio com feedback visual de sucesso.
 
-1. Baixe/clone este repositório.
-2. Abra o arquivo `index.html` no navegador.
+## Publicação recomendada
 
-1. Envie o projeto para um repositório no GitHub.
-2. Acesse **Settings > Pages**.
-3. Em **Build and deployment**, escolha:
-   - **Source:** Deploy from a branch
-   - **Branch:** `main` (ou branch padrão) e pasta `/ (root)`
-4. Salve e aguarde a publicação.
-5. O site ficará disponível em:
+1. Suba o projeto para um repositório público no GitHub.
+2. Ative o GitHub Pages na branch principal.
+3. Para seguir a orientação do professor, prefira publicar usando um endereço que contenha o nome do aluno no caminho do site.
+4. Um exemplo de URL adequada seria:
+
+`https://alnxtrem.github.io/alan-balduino-da-rosa-portfolio/`
+
+## Entrega final
+
+Use o arquivo `ENTREGA.md` como roteiro para montar o PDF exigido pelo professor.

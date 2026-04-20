@@ -1,73 +1,91 @@
-// Script para recursos de interface e validação de formulário.
-document.addEventListener("DOMContentLoaded", () => {
-  const form = document.getElementById("contact-form");
-  const nomeInput = document.getElementById("nome");
-  const emailInput = document.getElementById("email");
-  const mensagemInput = document.getElementById("mensagem");
-  const feedback = document.getElementById("form-feedback");
-  const anoAtual = document.getElementById("ano-atual");
+const form = document.getElementById("form");
+const statusEl = document.getElementById("form-status");
+const submitButton = document.getElementById("submit-button");
+const yearEl = document.getElementById("current-year");
 
-  // Atualiza ano automaticamente no rodapé.
-  anoAtual.textContent = new Date().getFullYear();
+if (yearEl) {
+  yearEl.textContent = new Date().getFullYear();
+}
 
-  form.addEventListener("submit", (event) => {
-    event.preventDefault();
+if (form && statusEl && submitButton) {
+  const fields = {
+    nome: document.getElementById("nome"),
+    email: document.getElementById("email"),
+    mensagem: document.getElementById("mensagem"),
+  };
 
-    limparErros();
-    feedback.textContent = "";
-    feedback.classList.remove("success");
+  const fieldList = Object.values(fields).filter(Boolean);
 
-    const nome = nomeInput.value.trim();
-    const email = emailInput.value.trim();
-    const mensagem = mensagemInput.value.trim();
-
-    let formularioValido = true;
-
-    if (nome.length < 3) {
-      exibirErro("erro-nome", "Informe um nome com pelo menos 3 caracteres.");
-      formularioValido = false;
-    }
-
-    if (!validarEmail(email)) {
-      exibirErro("erro-email", "Informe um e-mail válido.");
-      formularioValido = false;
-    }
-
-    if (mensagem.length < 10) {
-      exibirErro("erro-mensagem", "A mensagem deve ter pelo menos 10 caracteres.");
-      formularioValido = false;
-    }
-
-    if (!formularioValido) {
-      return;
-    }
-
-    // Simulação de envio assíncrono.
-    feedback.textContent = "Enviando mensagem...";
-
-    setTimeout(() => {
-      feedback.textContent = "Mensagem enviada com sucesso! Em breve entrarei em contato.";
-      feedback.classList.add("success");
-      form.reset();
-    }, 800);
-  });
-});
-
-function exibirErro(idElemento, texto) {
-  const campoErro = document.getElementById(idElemento);
-  if (campoErro) {
-    campoErro.textContent = texto;
+  function clearStatus() {
+    statusEl.textContent = "";
+    statusEl.classList.remove("is-error", "is-success");
   }
-}
 
-function limparErros() {
-  const erros = document.querySelectorAll(".error");
-  erros.forEach((erro) => {
-    erro.textContent = "";
-  });
-}
+  function resetFieldState() {
+    fieldList.forEach((field) => {
+      field.classList.remove("input-error");
+    });
 
-function validarEmail(email) {
-  const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  return regex.test(email);
+    clearStatus();
+  }
+
+  function setError(field, message) {
+    field.classList.add("input-error");
+    statusEl.textContent = message;
+    statusEl.classList.remove("is-success");
+    statusEl.classList.add("is-error");
+  }
+
+  if (fieldList.length === Object.keys(fields).length) {
+    fieldList.forEach((field) => {
+      field.addEventListener("input", function () {
+        field.classList.remove("input-error");
+
+        if (statusEl.textContent) {
+          clearStatus();
+        }
+      });
+    });
+
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+      resetFieldState();
+
+      const nome = fields.nome.value.trim();
+      const email = fields.email.value.trim();
+      const mensagem = fields.mensagem.value.trim();
+      const emailValido = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i.test(email);
+
+      if (nome.length < 3) {
+        setError(fields.nome, "Informe um nome com pelo menos 3 caracteres.");
+        fields.nome.focus();
+        return;
+      }
+
+      if (!emailValido) {
+        setError(fields.email, "Digite um email válido para continuarmos.");
+        fields.email.focus();
+        return;
+      }
+
+      if (mensagem.length < 10) {
+        setError(fields.mensagem, "A mensagem precisa ter pelo menos 10 caracteres.");
+        fields.mensagem.focus();
+        return;
+      }
+
+      submitButton.disabled = true;
+      submitButton.textContent = "Enviando...";
+      statusEl.textContent = "Mensagem validada. Simulando envio...";
+
+      window.setTimeout(function () {
+        form.reset();
+        submitButton.disabled = false;
+        submitButton.textContent = "Enviar mensagem";
+        statusEl.textContent = "Mensagem enviada com sucesso. Obrigado pelo contato!";
+        statusEl.classList.remove("is-error");
+        statusEl.classList.add("is-success");
+      }, 900);
+    });
+  }
 }
